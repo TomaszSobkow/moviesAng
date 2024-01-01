@@ -8,11 +8,11 @@ import { Movie } from '../movie';
 })
 export class MovieService {
 
-  private url="";
+  private url="http://localhost:8080/api/movies/getMovies";
 
   constructor(private httpClient: HttpClient) { }
 
-  geMoviesList(): Observable<Movie[]>{
+  getMoviesList(): Observable<Movie[]>{
     return this.httpClient.get<Movie[]>(this.url)
   }
 }
